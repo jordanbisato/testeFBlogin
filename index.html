@@ -17,7 +17,9 @@
 </div>
 
 <script>
+    alert(user);
     if (user) {
+        alert(user);
         $('#divLogin').hide();
         var birthDate = "";
         document.getElementById('status').innerHTML =
@@ -33,6 +35,7 @@
         FacebookLogin.userProfile(response.first_name, response.last_name, response.email, response.gender, response.age_range.min, birthDate);
     }
     else {
+        alert(user);
         $('#divLogin').show();
         document.getElementById('status').innerHTML = "Please Log in";
     }
