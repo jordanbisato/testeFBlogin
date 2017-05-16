@@ -102,7 +102,7 @@ app.get('/login-fb/logout', function(req, res){
 
 function ensureAuthenticated(req, res, next) {
   console.log("auth");
-  console.dir(req);
+  console.dir(req.user);
   if (req.isAuthenticated()) { return next(); }
   res.redirect('/login-fb')
 }
