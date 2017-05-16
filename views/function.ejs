@@ -1,5 +1,5 @@
 <%
-    module.exports = chamaJS = function(user) {
+    module.exports = function chamaJS(user) {
     FacebookLogin.userProfile(user._json.first_name, user._json.last_name,
             user._json.email, user._json.gender, user._json.age_range.min, birthDate);
 };
