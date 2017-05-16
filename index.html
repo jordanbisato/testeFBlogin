@@ -11,14 +11,14 @@
 <body>
 
 <div id="divLogin"
-     style="width:500px;height:180px;background-color:#ececec;padding:80px;margin-left:22%;margin-top:9%;">
+     style="width:500px; display: none; height:180px; background-color:#ececec; padding:80px; margin-left:22%; margin-top:9%;">
     <h2 style="font-size:40px;">Welcome! Please log in.</h2>
     <a href="/login-fb/auth/facebook"><img src="fb-login.jpg" width="151" height="24"></a>
 </div>
 
 <script>
     if (user) {
-        $('#divLogin').show();
+        $('#divLogin').hide();
         var birthDate = "";
         document.getElementById('status').innerHTML =
                 '<br/>name: ' + user.name +
@@ -33,7 +33,7 @@
         FacebookLogin.userProfile(response.first_name, response.last_name, response.email, response.gender, response.age_range.min, birthDate);
     }
     else {
-        $('#divLogin').hide();
+        $('#divLogin').show();
         document.getElementById('status').innerHTML = "Please Log in";
     }
 
