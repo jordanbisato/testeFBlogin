@@ -75,28 +75,28 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', function(req, res){
+app.get('/login-fb', function(req, res){
   console.dir(req);
   res.render('index', { user: req.user });
 });
 
-app.get('/account', ensureAuthenticated, function(req, res){
+app.get('/login-fb/account', ensureAuthenticated, function(req, res){
   res.render('account', { user: req.user });
 });
 
-app.get('/auth/facebook', passport.authenticate('facebook',{scope:'email, public_profile'}));
+app.get('/login-fb/auth/facebook', passport.authenticate('facebook',{scope:'email, public_profile'}));
 
 
-app.get('/auth/facebook/callback',
-  passport.authenticate('facebook', { successRedirect : '/', failureRedirect: '/login' }),
+app.get('/login-fb/auth/facebook/callback',
+  passport.authenticate('facebook', { successRedirect : '/login-fb', failureRedirect: '/login-fb' }),
   function(req, res) {
     console.dir(req);
-    res.redirect('/');
+    res.redirect('/login-fb');
   });
 
-app.get('/logout', function(req, res){
+app.get('/login-fb/logout', function(req, res){
   req.logout();
-  res.redirect('/');
+  res.redirect('/login-fb');
 });
 
 
@@ -104,7 +104,7 @@ function ensureAuthenticated(req, res, next) {
   console.log("auth");
   console.dir(req);
   if (req.isAuthenticated()) { return next(); }
-  res.redirect('/login')
+  res.redirect('/login-fb')
 }
 
 app.listen(8085);
