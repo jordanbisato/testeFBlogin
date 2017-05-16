@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FB Login</title>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//connect.facebook.net/en_US/sdk.js"></script>
+</head>
+<body>
+
+<div id="divLogin"
+     style="width:500px;height:180px;background-color:#ececec;padding:80px;margin-left:22%;margin-top:9%;">
+    <h2 style="font-size:40px;">Welcome! Please log in.</h2>
+    <a href="/login-fb/auth/facebook"><img src="fb-login.jpg" width="151" height="24"></a>
+</div>
+
+<script>
+    if (user) {
+        $('#divLogin').show();
+        var birthDate = "";
+        document.getElementById('status').innerHTML =
+                '<br/>name: ' + user.name +
+                '<br/>first_name: ' + user._json.first_name +
+                '<br/>last_name: ' + user._json.last_name +
+                '<br/>age_range: ' + user._json.age_range.min +
+                '<br/>gender: ' + user._json.gender +
+                '<br/>email: ' + user._json.email;
+
+        //alert("FIM GETDATA: " + JSON.stringify(response));
+
+        FacebookLogin.userProfile(response.first_name, response.last_name, response.email, response.gender, response.age_range.min, birthDate);
+    }
+    else {
+        $('#divLogin').hide();
+        document.getElementById('status').innerHTML = "Please Log in";
+    }
+
+
+</script>
+
+<div id="status">
+</div>
+
+</body>
+</html>
