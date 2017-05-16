@@ -76,7 +76,7 @@ app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
 
 app.get('/login-fb', function(req, res){
-  console.dir(req);
+  console.dir(req.user);
   res.render('index', { user: req.user });
 });
 
@@ -90,7 +90,7 @@ app.get('/login-fb/auth/facebook', passport.authenticate('facebook',{scope:'emai
 app.get('/login-fb/auth/facebook/callback',
   passport.authenticate('facebook', { successRedirect : '/login-fb', failureRedirect: '/login-fb' }),
   function(req, res) {
-    console.dir(req);
+    console.dir(req.user);
     res.redirect('/login-fb');
   });
 
