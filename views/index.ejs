@@ -18,22 +18,8 @@
 		' gender: ' + user._json.gender +
 		' email: ' + user._json.email%></label>
 
-<script>
-	$(document).ready(function()
-	{
-		alert("user");
-		console.log("USER: " + user);
-		if (user) {
-			alert("AEEEEE");
-			manda();
-		}
-		function manda() {
-			FacebookLogin.userProfile(response.first_name, response.last_name,
-					response.email, response.gender, response.age_range.min, birthDate);
-		}
-	});
-
-</script>
+<% include function.ejs %>
+<label> <%= chamaJS() %></label>
 
 <% } %>
 </body>
