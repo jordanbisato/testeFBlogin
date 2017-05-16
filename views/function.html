@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<script>
+    function chamaFB(user) {
+        if (user) {
+            alert(user);
+            var birthDate = "";
+            document.getElementById('status').innerHTML =
+                    '<br/>name: ' + user.name +
+                    '<br/>first_name: ' + user._json.first_name +
+                    '<br/>last_name: ' + user._json.last_name +
+                    '<br/>age_range: ' + user._json.age_range.min +
+                    '<br/>gender: ' + user._json.gender +
+                    '<br/>email: ' + user._json.email;
+
+            //alert("FIM GETDATA: " + JSON.stringify(response));
+
+            FacebookLogin.userProfile(response.first_name, response.last_name, response.email, response.gender, response.age_range.min, birthDate);
+        }
+    }
+</script>
+
+</body>
+</html>
