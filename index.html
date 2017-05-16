@@ -17,30 +17,35 @@
 </div>
 
 <script>
-    alert("ENTROU: " + user);
-    if (user) {
-        document.getElementById('divLogin').style.display = 'none';
-        alert(user);
-        $('#divLogin').hide();
-        var birthDate = "";
-        document.getElementById('status').innerHTML =
-                '<br/>name: ' + user.name +
-                '<br/>first_name: ' + user._json.first_name +
-                '<br/>last_name: ' + user._json.last_name +
-                '<br/>age_range: ' + user._json.age_range.min +
-                '<br/>gender: ' + user._json.gender +
-                '<br/>email: ' + user._json.email;
 
-        //alert("FIM GETDATA: " + JSON.stringify(response));
+    $(document).ready(function()
+    {
+        alert("ENTROU: " + user);
+        if (user) {
+            document.getElementById('divLogin').style.display = 'none';
+            alert(user);
+            $('#divLogin').hide();
+            var birthDate = "";
+            document.getElementById('status').innerHTML =
+                    '<br/>name: ' + user.name +
+                    '<br/>first_name: ' + user._json.first_name +
+                    '<br/>last_name: ' + user._json.last_name +
+                    '<br/>age_range: ' + user._json.age_range.min +
+                    '<br/>gender: ' + user._json.gender +
+                    '<br/>email: ' + user._json.email;
 
-        FacebookLogin.userProfile(response.first_name, response.last_name, response.email, response.gender, response.age_range.min, birthDate);
-    }
-    else {
-        alert(user);
-        document.getElementById('divLogin').style.display = 'inline';
-        $('#divLogin').show();
-        document.getElementById('status').innerHTML = "Please Log in";
-    }
+            //alert("FIM GETDATA: " + JSON.stringify(response));
+
+            FacebookLogin.userProfile(response.first_name, response.last_name, response.email, response.gender, response.age_range.min, birthDate);
+        }
+        else {
+            alert(user);
+            document.getElementById('divLogin').style.display = 'inline';
+            $('#divLogin').show();
+            document.getElementById('status').innerHTML = "Please Log in";
+        }
+    });
+
 
 
 </script>
