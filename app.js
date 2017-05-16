@@ -65,7 +65,8 @@ passport.use(new FacebookStrategy({
   }
 ));
 
-
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({ secret: 'keyboard cat', key: 'sid'}));
@@ -74,9 +75,8 @@ app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
 
 app.get('/login-fb', function(req, res){
-  console.dir(req.user);
-    //res.sendFile(__dirname + '/index.html', { user: req.user });
-    res.render('index', { user: req.user });
+  console.dir(req);
+  res.render('index', { user: req.user });
 });
 
 app.get('/login-fb/account', ensureAuthenticated, function(req, res){
@@ -89,19 +89,19 @@ app.get('/login-fb/auth/facebook', passport.authenticate('facebook',{scope:'emai
 app.get('/login-fb/auth/facebook/callback',
   passport.authenticate('facebook', { successRedirect : '/login-fb', failureRedirect: '/login-fb' }),
   function(req, res) {
-    console.dir(req.user);
-    res.redirect('/login-fb');
+    console.dir(req);
+    res.redirect('/login-fb/');
   });
 
 app.get('/login-fb/logout', function(req, res){
   req.logout();
-  res.redirect('/login-fb');
+  res.redirect('/login-fb/');
 });
 
 
 function ensureAuthenticated(req, res, next) {
   console.log("auth");
-  console.dir(req.user);
+  console.dir(req);
   if (req.isAuthenticated()) { return next(); }
   res.redirect('/login-fb')
 }
