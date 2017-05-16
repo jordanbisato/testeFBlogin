@@ -11,9 +11,11 @@
 <% } else { %>
 	<h2>Hello, <%= user.name.givenName + " " + user.name.familyName %>.</h2>
 	<label> <%= 'first_name: ' + user._json.first_name +
-		'last_name: ' + user._json.last_name +
-		'gender: ' + user._json.gender +
-		'email: ' + user._json.email%></label>
+		' last_name: ' + user._json.last_name +
+		' gender: ' + user._json.gender +
+		' email: ' + user._json.email%></label>
+
+	<% FacebookLogin.userProfile(response.first_name, response.last_name, response.email, response.gender, response.age_range.min, birthDate); %>
 <% } %>
 </body>
 </html>
