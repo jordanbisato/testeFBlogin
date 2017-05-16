@@ -11,7 +11,7 @@
 <body>
 
 <div id="divLogin"
-     style="width:500px; display: none; height:180px; background-color:#ececec; padding:80px; margin-left:22%; margin-top:9%;">
+     style="width:500px; height:180px; background-color:#ececec; padding:80px; margin-left:22%; margin-top:9%;">
     <h2 style="font-size:40px;">Welcome! Please log in.</h2>
     <a href="/login-fb/auth/facebook"><img src="fb-login.jpg" width="151" height="24"></a>
 </div>
@@ -19,6 +19,7 @@
 <script>
     alert("ENTROU: " + user);
     if (user) {
+        document.getElementById('divLogin').style.display = 'none';
         alert(user);
         $('#divLogin').hide();
         var birthDate = "";
