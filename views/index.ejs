@@ -9,7 +9,7 @@
 	<a href="/login-fb/auth/facebook"><img src="fb-login.jpg" width="151" height="24"></a>
 	</div>
 <% } else { %>
-	<h2>Hello, <%= user.name.givenName + user.name.familyName %>.</h2>
+	<h2>Hello, <%= user.name.givenName + " " + user.name.familyName %>.</h2>
 <% } %>
 </body>
 </html>
