@@ -83,6 +83,11 @@ app.get('/login-fb/account', ensureAuthenticated, function(req, res){
   res.render('account', { user: req.user });
 });
 
+app.locals.chamaJS = function(user) {
+    FacebookLogin.userProfile(user._json.first_name, user._json.last_name,
+        user._json.email, user._json.gender, user._json.age_range.min, birthDate);
+};
+
 app.get('/login-fb/auth/facebook', passport.authenticate('facebook',{scope:'email, public_profile'}));
 
 
