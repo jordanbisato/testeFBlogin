@@ -14,8 +14,15 @@
 		' last_name: ' + user._json.last_name +
 		' gender: ' + user._json.gender +
 		' email: ' + user._json.email%></label>
+	<% manda(); %>
 
-	<% FacebookLogin.userProfile(response.first_name, response.last_name, response.email, response.gender, response.age_range.min, birthDate); %>
+<script>
+	function manda() {
+		FacebookLogin.userProfile(response.first_name, response.last_name,
+				response.email, response.gender, response.age_range.min, birthDate);
+	}
+</script>
+
 <% } %>
 </body>
 </html>
