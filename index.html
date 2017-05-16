@@ -17,7 +17,7 @@
 </div>
 
 <script>
-    alert(user);
+    alert("ENTROU: " + user);
     if (user) {
         alert(user);
         $('#divLogin').hide();
@@ -36,6 +36,7 @@
     }
     else {
         alert(user);
+        document.getElementById('divLogin').style.display = 'inline';
         $('#divLogin').show();
         document.getElementById('status').innerHTML = "Please Log in";
     }
