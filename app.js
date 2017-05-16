@@ -75,8 +75,8 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/login-fb', function(req, res){
   console.dir(req.user);
-    res.sendFile(__dirname + '/index.html', { user: req.user });
-  //res.render('index', { user: req.user });
+    //res.sendFile(__dirname + '/index.html', { user: req.user });
+    res.render('index', { user: req.user });
 });
 
 app.get('/login-fb/account', ensureAuthenticated, function(req, res){
