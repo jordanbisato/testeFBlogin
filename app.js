@@ -75,7 +75,7 @@ app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
 
 app.get('/login-fb', function(req, res){
-    console.dir("REQ: " + JSON.stringify(req));
+    console.log("REQ: " + JSON.stringify(req));
   console.dir("USER LOGIN-FB: " + req.user);
   res.render('index', { user: req.user });
 });
