@@ -97,7 +97,7 @@ app.get('/login-fb/auth/facebook/callback',
   passport.authenticate('facebook', { successRedirect : '/login-fb/account', failureRedirect: '/login-fb/falhou' }),
   function(req, res) {
     console.dir("USER CALLBACK: " + req.user);
-    res.redirect('/login-fb/');
+    res.redirect('/login-fb/account');
   });
 
 app.get('/login-fb/logout', function(req, res){
@@ -110,7 +110,7 @@ function ensureAuthenticated(req, res, next) {
   console.log("USER AUTH");
   console.dir(req.user);
   if (req.isAuthenticated()) { return next(); }
-  res.redirect('/login-fb')
+  res.redirect('/login-fb/account')
 }
 
 app.listen(8085);
