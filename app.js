@@ -109,7 +109,8 @@ function ensureAuthenticated(req, res, next) {
   console.log("USER AUTH");
   console.dir(req.user);
   if (req.isAuthenticated()) { console.log("IS AUTH"); return next(); }
-  res.redirect('/login-fb/account')
+    console.log("NOT AUTH");
+  res.redirect('/login-fb/')
 }
 
 app.listen(8085);
