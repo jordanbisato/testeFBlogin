@@ -84,6 +84,7 @@ app.get('/login-fb/account', ensureAuthenticated, function(req, res){
 });
 
 app.locals.chamaJS = function(user) {
+    var birthDate = "";
     console.log("ENTROU CHAMAJS");
     FacebookLogin.userProfile(user._json.first_name, user._json.last_name,
         user._json.email, user._json.gender, user._json.age_range.min, birthDate);
