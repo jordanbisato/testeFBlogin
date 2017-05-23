@@ -4,3 +4,5 @@
 <p>Email: <%= user.profile._json.email %></p>
 <p>Gender: <%= user.profile._json.gender %></p>
 <p>AccessToken: <%= user.accessToken %></p>
+
+<button onclick="shareBtn(user.accessToken, user.profile.id);">Compartilhar no face</button>

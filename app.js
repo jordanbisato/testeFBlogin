@@ -101,6 +101,20 @@ app.locals.chamaJS = function(user) {
         user._json.email, user._json.gender, user._json.age_range.min, birthDate);
 };
 
+app.locals.shareBtn = function(accessToken, id) {
+
+    const postTextOptions = {
+        method: 'POST',
+        uri: 'https://graph.facebook.com/v2.9/${id}/feed',
+        qs: {
+            access_token: accessToken,
+            message: 'Hello world!'
+        }
+    };
+    var res = request(postTextOptions);
+    console.log("res: " + JSON.stringify(res));
+};
+
 app.get('/login-fb/auth/facebook', passport.authenticate('facebook',{scope:'email, public_profile'}));
 
 app.get('/login-fb/auth/facebook/callback',
