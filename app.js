@@ -117,7 +117,7 @@ app.locals.shareBtn = function(accessToken, id) {
     console.log("res: " + JSON.stringify(res));
 };
 
-app.get('/login-fb/auth/facebook', passport.authenticate('facebook',{scope:'email, public_profile'}));
+app.get('/login-fb/auth/facebook', passport.authenticate('facebook',{scope:'email, public_profile, publish_actions'}));
 
 app.get('/login-fb/auth/facebook/callback',
   passport.authenticate('facebook', { successRedirect : '/login-fb/account', failureRedirect: '/login-fb/falhou' }),
