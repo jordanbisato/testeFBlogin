@@ -60,6 +60,7 @@ passport.use(new FacebookStrategy({
             }
           });
       }
+      console.log("PASSEI AQUI ");
       return done(null, profile);
     });
   }
