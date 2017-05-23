@@ -102,6 +102,8 @@ app.locals.chamaJS = function(user) {
 
 app.locals.shareBtn = function(accessToken, id) {
 
+    console.log("ENTROU");
+
     const postTextOptions = {
         method: 'POST',
         uri: 'https://graph.facebook.com/v2.9/${id}/feed',
