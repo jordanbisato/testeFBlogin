@@ -17,6 +17,8 @@ var connection = mysql.createConnection({
   database : config.database
 });
 
+var i = 0;
+
 //Connect to Database only if Config.js parameter is set.
 
 if(config.use_database==='true')
@@ -60,7 +62,8 @@ passport.use(new FacebookStrategy({
             }
           });
       }
-      console.log("PASSEI AQUI ");
+        console.log("fbstrategy" + i);
+        i++;
       return done(null, profile);
     });
   }
@@ -76,11 +79,14 @@ app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
 
 app.get('/login-fb', function(req, res){
-  console.dir("USER LOGIN-FB: " + req.user);
+    console.log("get index" + i);
+    i++;
   res.render('index', { user: req.user });
 });
 
 app.get('/login-fb/account', ensureAuthenticated, function(req, res){
+    console.log("get account" + i);
+    i++;
   res.render('account', { user: req.user });
 });
 
@@ -96,6 +102,8 @@ app.get('/login-fb/auth/facebook', passport.authenticate('facebook',{scope:'emai
 app.get('/login-fb/auth/facebook/callback',
   passport.authenticate('facebook', { successRedirect : '/login-fb/account', failureRedirect: '/login-fb/falhou' }),
   function(req, res) {
+      console.log("get auth face callback" + i);
+      i++;
     console.dir("USER CALLBACK: " + req.user);
     res.redirect('/login-fb/account');
   });
@@ -107,6 +115,8 @@ app.get('/login-fb/logout', function(req, res){
 
 
 function ensureAuthenticated(req, res, next) {
+    console.log("ensure auth" + i);
+    i++;
   console.log("USER AUTH");
   console.dir(req.user);
   if (req.isAuthenticated()) { console.log("IS AUTH"); return next(); }
