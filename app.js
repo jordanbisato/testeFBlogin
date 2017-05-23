@@ -110,8 +110,7 @@ app.locals.shareBtn = function(accessToken, id) {
         uri: `https://graph.facebook.com/v2.9/${id}/feed`,
         qs: {
             access_token: accessToken,
-            message: 'Hello world!',
-            fields: 'id, permalink_url'
+            message: 'Hello world!'
         }
     };
     var res = request(postTextOptions);
