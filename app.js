@@ -107,9 +107,8 @@ app.get('/login-fb/logout', function(req, res){
 
 function ensureAuthenticated(req, res, next) {
   console.log("USER AUTH");
-  if (req.isAuthenticated()) {
-      console.log("IS AUTH"); return next();
-  }
+  console.dir(req.user);
+  if (req.isAuthenticated()) { console.log("IS AUTH"); return next(); }
     console.log("NOT AUTH");
   res.redirect('/login-fb/')
 }
