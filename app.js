@@ -90,7 +90,6 @@ app.get('/login-fb', function(req, res){
 app.get('/login-fb/account', ensureAuthenticated, function(req, res){
     console.log("get account: " + i);
     i++;
-    console.dir(req);
   res.render('account', { user: req.user });
 });
 
