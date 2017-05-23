@@ -8,6 +8,7 @@ var express           =     require('express')
   , config            =     require('./configuration/config')
   , mysql             =     require('mysql')
   , app               =     express();
+const request = require('request-promise');
 
 //Define MySQL parameter in Config.js file.
 var connection = mysql.createConnection({
