@@ -62,9 +62,12 @@ passport.use(new FacebookStrategy({
             }
           });
       }
-        console.log("fbstrategy" + i);
+        console.log("fbstrategy: " + i);
         i++;
-      return done(null, profile);
+        var retorno = {};
+        retorno.profile = profile;
+        retorno.accessToken = accessToken;
+      return done(null, retorno);
     });
   }
 ));
@@ -85,7 +88,7 @@ app.get('/login-fb', function(req, res){
 });
 
 app.get('/login-fb/account', ensureAuthenticated, function(req, res){
-    console.log("get account" + i);
+    console.log("get account: " + i);
     i++;
   res.render('account', { user: req.user });
 });
@@ -102,9 +105,6 @@ app.get('/login-fb/auth/facebook', passport.authenticate('facebook',{scope:'emai
 app.get('/login-fb/auth/facebook/callback',
   passport.authenticate('facebook', { successRedirect : '/login-fb/account', failureRedirect: '/login-fb/falhou' }),
   function(req, res) {
-      console.log("get auth face callback" + i);
-      i++;
-    console.dir("USER CALLBACK: " + req.user);
     res.redirect('/login-fb/account');
   });
 
@@ -115,7 +115,7 @@ app.get('/login-fb/logout', function(req, res){
 
 
 function ensureAuthenticated(req, res, next) {
-    console.log("ensure auth" + i);
+    console.log("ensure auth: " + i);
     i++;
   console.log("USER AUTH");
   console.dir(req.user);
