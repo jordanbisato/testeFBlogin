@@ -80,7 +80,6 @@ app.get('/login-fb', function(req, res){
 });
 
 app.get('/login-fb/account', ensureAuthenticated, function(req, res){
-    console.dir(req);
   res.render('account', { user: req.user });
 });
 
@@ -92,7 +91,6 @@ app.locals.chamaJS = function(user) {
 };
 
 app.get('/login-fb/auth/facebook', passport.authenticate('facebook',{scope:'email, public_profile'}));
-
 
 app.get('/login-fb/auth/facebook/callback',
   passport.authenticate('facebook', { successRedirect : '/login-fb/account', failureRedirect: '/login-fb/falhou' }),
@@ -109,8 +107,9 @@ app.get('/login-fb/logout', function(req, res){
 
 function ensureAuthenticated(req, res, next) {
   console.log("USER AUTH");
-  console.dir(req.user);
-  if (req.isAuthenticated()) { console.log("IS AUTH"); return next(); }
+  if (req.isAuthenticated()) {
+      console.log("IS AUTH"); return next();
+  }
     console.log("NOT AUTH");
   res.redirect('/login-fb/')
 }
