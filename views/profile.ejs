@@ -35,11 +35,12 @@
 
             <% if (typeof user.google != 'undefined') { %>
                 <h2 class="fa fa-google-plus"> Google</h2><br>
-                <img src="https://avatars.io/gravatar/<%= user.google.email %>/140" class="img-circle"><br>
+            <img src="<%= user.google.photos[0].value %>" class="img-circle"><br>
                 <strong>id</strong>: <%= user.google.id %><br>
-                <strong>token</strong>: <%= user.accessToken %><br>
-                <strong>email</strong>: <%= user.google.email %><br>
-                <strong>name</strong>: <%= user.google.name %>
+                <strong>name</strong>: <%= user.google.name.givenName %> <%= user.google.name.familyName %><br>
+                <!--<strong>token</strong>: <%= user.accessToken %><br>-->
+                <strong>email</strong>: <%= user.google.emails[0].value %><br>
+
             <% } %>
         </div>
 
