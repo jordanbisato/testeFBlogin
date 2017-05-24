@@ -53,7 +53,7 @@ router.get('/login-promo/auth/twitter/callback', passport.authenticate('twitter'
 }));
 
 // Google routes
-router.get('/login-promo/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+router.get('/login-promo/auth/google', passport.authenticate('google', { scope: ['profile', 'email', 'gender', 'birthday'] }));
 
 router.get('/login-promo/auth/google/callback', passport.authenticate('google', {
     successRedirect: '/login-promo/profile',
