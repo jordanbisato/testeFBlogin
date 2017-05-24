@@ -19,6 +19,7 @@ var connection = mysql.createConnection({
 });
 
 var i = 0;
+var idPost = "";
 
 //Connect to Database only if Config.js parameter is set.
 
@@ -120,10 +121,28 @@ app.locals.shareBtn = function(accessToken, id) {
 // There is another property that allows for pagination of results.
 // Pagination will not be covered in this post,
 // so we only need the data property of the parsed response.
+            idPost = fbRes.id;
             console.log("DATA: " + fbRes);
-        const parsedRes = JSON.parse(fbRes);
-            console.log("PARSEDRES: " + parsedRes);
-    })
+    });
+
+    const getUrlOptions = {
+        method: 'GET',
+        uri: `https://graph.facebook.com/v2.9/${idPost}`,
+        qs: {
+            access_token: accessToken,
+            // type should be 'post' for image or text,
+            // and should be 'video' for a video url
+            type: 'post',
+            fields: 'permalink_url'
+        }
+    };
+    return request(getUrlOptions)
+        .then(fbUrlRes => {
+            const permalink = JSON.parse(fbUrlRes).permalink_url;
+            console.log("fbUrlRes: " + fbUrlRes);
+            console.log("permalink: " + permalink);
+            //return {postUrl: permalink};
+        })
 };
 
 app.post('/fb-share', (req, res) => {

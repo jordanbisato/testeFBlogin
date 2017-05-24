@@ -13,10 +13,12 @@
 	</div>
 <% } else { %>
 	<h2>Hello, <%= user.profile.name.givenName + " " + user.profile.name.familyName %>.</h2>
-	<label> <%= 'first_name: ' + user.profile._json.first_name +
-		' last_name: ' + user.profile._json.last_name +
-		' gender: ' + user.profile._json.gender +
-		' email: ' + user.profile._json.email %></label>
+	<p>ID: <%= user.profile.id %></p>
+	<p>First Name: <%= user.profile._json.first_name %></p>
+	<p>Last Name: <%= user.profile._json.last_name %></p>
+	<p>Email: <%= user.profile._json.email %></p>
+	<p>Gender: <%= user.profile._json.gender %></p>
+	<p>AccessToken: <%= user.accessToken %></p>
 
 <% } %>
 </body>
