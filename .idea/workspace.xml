@@ -38,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/config/passport.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="203">
-              <caret line="64" column="63" selection-start-line="64" selection-start-column="63" selection-end-line="64" selection-end-column="63" />
+              <caret line="64" column="62" selection-start-line="64" selection-start-column="62" selection-end-line="64" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -804,12 +804,12 @@
       <workItem from="1495198236079" duration="7236000" />
       <workItem from="1495561874128" duration="10262000" />
       <workItem from="1495628914947" duration="6497000" />
-      <workItem from="1495642153427" duration="13638000" />
+      <workItem from="1495642153427" duration="13691000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65280000" />
+    <option name="totallyTimeSpent" value="65333000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1281,7 +1281,7 @@
     <entry file="file://$PROJECT_DIR$/config/passport.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
-          <caret line="64" column="63" selection-start-line="64" selection-start-column="63" selection-end-line="64" selection-end-column="63" />
+          <caret line="64" column="62" selection-start-line="64" selection-start-column="62" selection-end-line="64" selection-end-column="62" />
           <folding />
         </state>
       </provider>
