@@ -6,14 +6,14 @@ module.exports = {
     },
 
     'twitterAuth': {
-        'consumerKey': 'your-consumer-key-here',
-        'consumerSecret': 'your-client-secret-here',
-        'callbackURL': 'http://localhost:8080/auth/twitter/callback'
+        'consumerKey': 'pKnfaRfHUNNqGTrsSoPmxS9XA',
+        'consumerSecret': 'XouAUtJwv6Saa4su6QaRDLWxYiYYdxftkWU2DI9uNWsj0jjzYa',
+        'callbackURL': 'http://www.navega.gratis:8085/login-promo/auth/twitter/callback'
     },
 
     'googleAuth': {
-        'clientID': 'your-secret-clientID-here',
-        'clientSecret': 'your-client-secret-here',
-        'callbackURL': 'http://localhost:8080/auth/google/callback'
+        'clientID': '103438997905-lkc2277l1h0oqt210qi6iika2arhh67e.apps.googleusercontent.com',
+        'clientSecret': '6c0A60SU8tJbGytrn0C2t7DH',
+        'callbackURL': 'http://www.navega.gratis:8085/login-promo/auth/google/callback'
     }
 };
