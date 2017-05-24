@@ -15,6 +15,7 @@ router.get('/login-promo/signup', function(req, res) {
 });
 
 router.get('/login-promo/profile', isLoggedIn, function(req, res) {
+    console.log("user: " + req.user);
     res.render('profile.ejs', { user: req.user });
 });
 
@@ -62,7 +63,10 @@ router.get('/login-promo/auth/google/callback', passport.authenticate('google', 
 module.exports = router;
 
 function isLoggedIn(req, res, next) {
-    if (req.isAuthenticated())
+    if (req.isAuthenticated()) {
+        console.log("IS AUTH");
         return next();
+    }
+    console.log("NOT AUTH");
     res.redirect('/login-promo');
 }
