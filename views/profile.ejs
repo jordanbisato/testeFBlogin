@@ -17,11 +17,9 @@
 
             <% if (user.facebook.id != null) { %>
                 <h2 class="fa fa-facebook"> Facebook</h2><br>
-                <% if (user.facebook.email != null) { %>
-                    <img src="https://avatars.io/gravatar/<%= user.facebook.email %>/140" class="img-circle"><br>
-                <% } %>
+                <img src="https://avatars.io/gravatar/<%= user.facebook.emails.value %>/140" class="img-circle"><br>
                 <strong>id</strong>: <%= user.facebook.id %><br>
-                <strong>email</strong>: <%= user.facebook.email %><br>
+                <strong>email</strong>: <%= user.facebook.emails.value %><br>
                 <strong>name</strong>: <%= user.facebook.name %>
             <% } %>
 
