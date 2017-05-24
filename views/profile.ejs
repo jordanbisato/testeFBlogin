@@ -4,7 +4,6 @@
 <div class="col-sm-8 col-sm-offset-2">
     <div class="text-center">
         <h1 class=" fa fa-user"> Profile</h1><br>
-        <span><strong>user token</strong>: <%= user.accessToken %></span><br>
         <span class="fa fa-sign-out"><a href="/login-promo"> Sign out</a></span>
         <hr>
 
@@ -19,8 +18,9 @@
                 <h2 class="fa fa-facebook"> Facebook</h2><br>
                 <img src="https://avatars.io/gravatar/<%= user.facebook.emails[0].value %>/140" class="img-circle"><br>
                 <strong>id</strong>: <%= user.facebook.id %><br>
+                <strong>name</strong>: <%= user.facebook.name.givenName %> <%= user.facebook.name.familyName %><br>
                 <strong>email</strong>: <%= user.facebook.emails[0].value %><br>
-                <strong>name</strong>: <%= user.facebook.name %>
+                <strong>gender</strong>: <%= user.facebook.gender %>
             <% } %>
 
             <% if (typeof user.twitter != 'undefined') { %>
