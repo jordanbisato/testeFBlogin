@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+//var users = require('./routes/users');
 
 var port = process.env.PORT || 8085;
 
@@ -37,7 +37,7 @@ app.use(passport.session());
 app.use(flash());
 
 app.use('/', routes);
-app.use('/users', users);
+//app.use('/users', users);
 
 require('./config/passport')(passport);
 

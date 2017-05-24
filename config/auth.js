@@ -2,7 +2,7 @@ module.exports = {
     'facebookAuth': {
         'clientID': '657408101116489', // your App ID
         'clientSecret': '30c40229f2c8ef598981422a354068fa', // your App Secret
-        'callbackURL': 'http://www.navega.gratis:8085/login-fb/auth/facebook/callback'
+        'callbackURL': 'http://www.navega.gratis:8085/login-promo/auth/facebook/callback'
     },
 
     'twitterAuth': {
