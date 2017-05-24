@@ -10,12 +10,12 @@
 
         <div class="jumbotron">
 
-            <% if (user.local.email != null) { %>
+            <% if (this.user.local.email != null) { %>
                 <img src="https://avatars.io/gravatar/<%= user.local.email %>/140" class="img-circle"><br>
                 <strong>email</strong>: <%= user.local.email %><br>
             <% } %>
 
-            <% if (user.facebook.id != null) { %>
+            <% if (this.user.facebook.id != null) { %>
                 <h2 class="fa fa-facebook"> Facebook</h2><br>
                 <img src="https://avatars.io/gravatar/<%= user.facebook.emails[0].value %>/140" class="img-circle"><br>
                 <strong>id</strong>: <%= user.facebook.id %><br>
@@ -23,7 +23,7 @@
                 <strong>name</strong>: <%= user.facebook.name %>
             <% } %>
 
-            <% if (user.twitter.id != null) { %>
+            <% if (this.user.twitter.id != null) { %>
                 <h2 class="fa fa-twitter"> Twitter</h2><br>
                 <img src="https://avatars.io/twitter/<%= user.twitter.username %>" class="img-circle"><br>
                 <strong>id</strong>: <%= user.twitter.id %><br>
@@ -32,7 +32,7 @@
                 <strong>displayName</strong>: <%= user.twitter.displayName %>
             <% } %>
 
-            <% if (user.google.id != null) { %>
+            <% if (this.user.google.id != null) { %>
                 <h2 class="fa fa-google-plus"> Google</h2><br>
                 <img src="https://avatars.io/gravatar/<%= user.google.email %>/140" class="img-circle"><br>
                 <strong>id</strong>: <%= user.google.id %><br>
