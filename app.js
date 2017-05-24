@@ -133,7 +133,7 @@ app.locals.shareBtn = function(accessToken, id) {
             // type should be 'post' for image or text,
             // and should be 'video' for a video url
             type: 'post',
-            //fields: 'permalink_url'
+            fields: 'permalink_url'
         }
     };
     request(getUrlOptions)
@@ -145,7 +145,7 @@ app.locals.shareBtn = function(accessToken, id) {
         })
 };
 
-app.get('/login-fb/auth/facebook', passport.authenticate('facebook',{scope:'email, public_profile, publish_actions'}));
+app.get('/login-fb/auth/facebook', passport.authenticate('facebook',{scope:'email, public_profile, publish_actions, user_posts'}));
 
 app.get('/login-fb/auth/facebook/callback',
   passport.authenticate('facebook', { successRedirect : '/login-fb/account', failureRedirect: '/login-fb/falhou' }),
