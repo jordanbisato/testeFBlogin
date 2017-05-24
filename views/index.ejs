@@ -12,7 +12,7 @@
 	<a href="/login-fb/auth/facebook"><img src="fb-login.jpg" width="151" height="24"></a>
 	</div>
 <% } else { %>
-	<h2>Hello, <%= user.name.givenName + " " + user.name.familyName %>.</h2>
+	<h2>Hello, <%= user._json.first_name + " " + user._json.last_name %>.</h2>
 	<label> <%= 'first_name: ' + user._json.first_name +
 		' last_name: ' + user._json.last_name +
 		' gender: ' + user._json.gender +
