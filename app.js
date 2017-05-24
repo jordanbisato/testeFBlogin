@@ -121,7 +121,7 @@ app.locals.shareBtn = function(accessToken, id) {
 // so we only need the data property of the parsed response.
             console.log("DATA: " + JSON.stringify(fbRes));
         const parsedRes = JSON.parse(fbRes).data;
-        res.json(parsedRes);
+            console.log("PARSEDRES: " + parsedRes);
     })
 };
 
@@ -136,13 +136,7 @@ app.post('/fb-share', (req, res) => {
     };
     request(postTextOptions)
         .then(fbRes => {
-// Search results are in the data property of the response.
-// There is another property that allows for pagination of results.
-// Pagination will not be covered in this post,
-// so we only need the data property of the parsed response.
             console.log("DATA: " + JSON.stringify(fbRes));
-            const parsedRes = JSON.parse(fbRes).data;
-            res.json(parsedRes);
         })
 });
 
