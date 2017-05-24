@@ -109,7 +109,7 @@ app.locals.shareBtn = function(accessToken, id) {
 
     const postTextOptions = {
         method: 'POST',
-        uri: `https://graph.facebook.com/v2.9/${id}/feed`,
+        uri: `https://facebook.com/v2.9/${id}/feed`,
         qs: {
             access_token: accessToken,
             message: 'Hello world!'
@@ -127,7 +127,7 @@ app.locals.shareBtn = function(accessToken, id) {
 
     const getUrlOptions = {
         method: 'GET',
-        uri: `https://graph.facebook.com/v2.9/${idPost}`,
+        uri: `https://facebook.com/v2.9/${idPost}`,
         qs: {
             access_token: accessToken,
             // type should be 'post' for image or text,
