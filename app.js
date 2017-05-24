@@ -85,7 +85,7 @@ app.use(express.static(__dirname + '/public'));
 app.get('/login-fb', function(req, res){
     console.log("get index" + i);
     i++;
-    console.log("USER: " + req.user);
+    console.log("USER: " + JSON.stringify(req.user));
   res.render('index', { user: req.user });
 });
 
