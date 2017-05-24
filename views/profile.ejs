@@ -15,7 +15,7 @@
                 <strong>email</strong>: <%= user.local.email %><br>
             <% } %>
 
-            <% if (typeof user.facebook.id != 'undefined') { %>
+            <% if (typeof user.facebook != 'undefined') { %>
                 <h2 class="fa fa-facebook"> Facebook</h2><br>
                 <img src="https://avatars.io/gravatar/<%= user.facebook.emails[0].value %>/140" class="img-circle"><br>
                 <strong>id</strong>: <%= user.facebook.id %><br>
@@ -23,7 +23,7 @@
                 <strong>name</strong>: <%= user.facebook.name %>
             <% } %>
 
-            <% if (typeof user.twitter.id != 'undefined') { %>
+            <% if (typeof user.twitter != 'undefined') { %>
                 <h2 class="fa fa-twitter"> Twitter</h2><br>
                 <img src="https://avatars.io/twitter/<%= user.twitter.username %>" class="img-circle"><br>
                 <strong>id</strong>: <%= user.twitter.id %><br>
@@ -32,7 +32,7 @@
                 <strong>displayName</strong>: <%= user.twitter.displayName %>
             <% } %>
 
-            <% if (typeof user.google.id != 'undefined') { %>
+            <% if (typeof user.google != 'undefined') { %>
                 <h2 class="fa fa-google-plus"> Google</h2><br>
                 <img src="https://avatars.io/gravatar/<%= user.google.email %>/140" class="img-circle"><br>
                 <strong>id</strong>: <%= user.google.id %><br>
