@@ -136,10 +136,10 @@ app.locals.shareBtn = function(accessToken, id) {
             fields: 'permalink_url'
         }
     };
-    return request(getUrlOptions)
+    request(getUrlOptions)
         .then(fbUrlRes => {
-            const permalink = JSON.parse(fbUrlRes).permalink_url;
             console.log("fbUrlRes: " + fbUrlRes);
+            const permalink = JSON.parse(fbUrlRes).permalink_url;
             console.log("permalink: " + permalink);
             //return {postUrl: permalink};
         })
