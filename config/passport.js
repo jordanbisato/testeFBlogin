@@ -87,7 +87,7 @@ module.exports = function(passport) {
             //     });
             // });
             var retorno = {};
-            retorno.profile = profile;
+            retorno.facebook = profile;
             retorno.accessToken = token;
             return done(null, retorno);
         }));
@@ -119,7 +119,7 @@ module.exports = function(passport) {
             //     });
             // });
             var retorno = {};
-            retorno.profile = profile;
+            retorno.twitter = profile;
             retorno.accessToken = token;
             return done(null, retorno);
         }));
@@ -151,7 +151,7 @@ module.exports = function(passport) {
             //     });
             // });
             var retorno = {};
-            retorno.profile = profile;
+            retorno.google = profile;
             retorno.accessToken = token;
             return done(null, retorno);
         }));
