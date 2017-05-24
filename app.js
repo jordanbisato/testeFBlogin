@@ -113,9 +113,39 @@ app.locals.shareBtn = function(accessToken, id) {
             message: 'Hello world!'
         }
     };
-    var res = request(postTextOptions);
-    console.log("res: " + JSON.stringify(res));
+    request(postTextOptions)
+        .then(fbRes => {
+// Search results are in the data property of the response.
+// There is another property that allows for pagination of results.
+// Pagination will not be covered in this post,
+// so we only need the data property of the parsed response.
+            console.log("DATA: " + JSON.stringify(fbRes));
+        const parsedRes = JSON.parse(fbRes).data;
+        res.json(parsedRes);
+    })
 };
+
+app.post('/fb-share', (req, res) => {
+    const postTextOptions = {
+        method: 'POST',
+        uri: `https://graph.facebook.com/v2.9/${id}/feed`,
+        qs: {
+            access_token: accessToken,
+            message: 'Hello world!'
+        }
+    };
+    request(postTextOptions)
+        .then(fbRes => {
+// Search results are in the data property of the response.
+// There is another property that allows for pagination of results.
+// Pagination will not be covered in this post,
+// so we only need the data property of the parsed response.
+            console.log("DATA: " + JSON.stringify(fbRes));
+            const parsedRes = JSON.parse(fbRes).data;
+            res.json(parsedRes);
+        })
+});
+
 
 app.get('/login-fb/auth/facebook', passport.authenticate('facebook',{scope:'email, public_profile, publish_actions'}));
 
