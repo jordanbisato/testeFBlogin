@@ -10,6 +10,7 @@
     "mysql": "2.4.3",
     "passport": "0.2.1",
     "passport-facebook": "latest",
+    "passport-google-oauth": "^1.0.0",
     "request": "^2.81.0",
     "request-promise": "^4.2.1"
   }

@@ -1,24 +1,15 @@
-<html>
-<head>
-<title>Facebook Login using Node and Express</title>
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
-			integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-			crossorigin="anonymous"></script>
-</head>
+<% include partials/head.ejs %>
 <body>
-<% if (!user) { %>
-  <div style="width:500px;height:180px;background-color:#ececec;padding:80px;margin-left:22%;margin-top:9%;">
-	<h2 style="font-size:40px;">Welcome! Please log in.</h2>
-	<a href="/login-fb/auth/facebook"><img src="fb-login.jpg" width="151" height="24"></a>
-	</div>
-<% } else { %>
-	<h2>Hello, <%= user.profile.name.givenName + " " + user.profile.name.familyName %>.</h2>
-	<p>ID: <%= user.profile.id %></p>
-	<p>First Name: <%= user.profile._json.first_name %></p>
-	<p>Last Name: <%= user.profile._json.last_name %></p>
-	<p>Email: <%= user.profile._json.email %></p>
-	<p>Gender: <%= user.profile._json.gender %></p>
+<div class="col-sm-8 col-sm-offset-2"/>
+	<div class="jumbotron text-center">
+		<h1>Express Authentication</h1>
+		<p class="lead">A simple authentication app built with express, node & passport.</p>
 
-<% } %>
+		<a href="/login" class="btn btn-default"><span class="fa fa-sign-in"></span> Login</a>
+		<a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Signup</a>
+		<a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>
+		<a href="/auth/twitter" class="btn btn-info"><span class="fa fa-twitter"></span> Twitter</a>
+		<a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google</a>
+	</div>
 </body>
 </html>
