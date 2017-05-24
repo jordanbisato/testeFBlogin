@@ -133,7 +133,7 @@ app.locals.shareBtn = function(accessToken, id) {
             // type should be 'post' for image or text,
             // and should be 'video' for a video url
             type: 'post',
-            fields: 'permalink_url'
+            //fields: 'permalink_url'
         }
     };
     request(getUrlOptions)
@@ -144,22 +144,6 @@ app.locals.shareBtn = function(accessToken, id) {
             //return {postUrl: permalink};
         })
 };
-
-app.post('/fb-share', (req, res) => {
-    const postTextOptions = {
-        method: 'POST',
-        uri: `https://graph.facebook.com/v2.9/${id}/feed`,
-        qs: {
-            access_token: accessToken,
-            message: 'Hello world!'
-        }
-    };
-    request(postTextOptions)
-        .then(fbRes => {
-            console.log("DATA: " + JSON.stringify(fbRes));
-        })
-});
-
 
 app.get('/login-fb/auth/facebook', passport.authenticate('facebook',{scope:'email, public_profile, publish_actions'}));
 
