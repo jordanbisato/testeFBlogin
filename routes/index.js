@@ -45,7 +45,7 @@ router.get('/login-promo/auth/facebook/callback', passport.authenticate('faceboo
 }));
 
 // Twitter routes
-router.get('/login-promo/auth/twitter', passport.authenticate('twitter', { scope: ['email'] }));
+router.get('/login-promo/auth/twitter', passport.authenticate('twitter', { scope: ['email', 'gender', 'birthday'] }));
 
 router.get('/login-promo/auth/twitter/callback', passport.authenticate('twitter', {
     successRedirect: '/login-promo/profile',
