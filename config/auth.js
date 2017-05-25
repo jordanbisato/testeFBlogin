@@ -9,7 +9,8 @@ module.exports = {
         'consumerKey': 'pKnfaRfHUNNqGTrsSoPmxS9XA',
         'consumerSecret': 'XouAUtJwv6Saa4su6QaRDLWxYiYYdxftkWU2DI9uNWsj0jjzYa',
         'callbackURL': 'http://www.navega.gratis:8085/login-promo/auth/twitter/callback',
-        'includeEmail': true
+        passReqToCallback: true,
+        userProfileURL: "https://api.twitter.com/1.1/account/verify_credentials.json?include_email=true",
     },
 
     'googleAuth': {
