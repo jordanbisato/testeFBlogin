@@ -35,11 +35,13 @@
 
             <% if (typeof user.google != 'undefined') { %>
                 <h2 class="fa fa-google-plus"> Google</h2><br>
-            <img src="<%= user.google.photos[0].value %>" class="img-circle"><br>
+                <img src="<%= user.google.photos[0].value %>" class="img-circle"><br>
                 <strong>id</strong>: <%= user.google.id %><br>
                 <strong>name</strong>: <%= user.google.name.givenName %> <%= user.google.name.familyName %><br>
                 <!--<strong>token</strong>: <%= user.accessToken %><br>-->
                 <strong>email</strong>: <%= user.google.emails[0].value %><br>
+                <strong>gender</strong>: <%= user.google.gender %><br>
+                <strong>birthday</strong>: <%= user.google._json.birthday %><br>
             <% } %>
         </div>
 
