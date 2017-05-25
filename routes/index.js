@@ -54,7 +54,7 @@ router.get('/login-promo/auth/twitter/callback', passport.authenticate('twitter'
 
 // Google routes
 router.get('/login-promo/auth/google', passport.authenticate('google', { scope: ['profile', 'email', 'https://www.googleapis.com/auth/user.birthday.read',
-    'https://www.googleapis.com/auth/plus.login', 'https://www.googleapis.com/auth/plus.profiles.read', 'https://www.googleapis.com/auth/plus.me', 'https://www.googleapis.com/auth/userinfo.profile'] }));
+    'https://www.googleapis.com/auth/plus.login', 'https://www.googleapis.com/auth/plus.me', 'https://www.googleapis.com/auth/userinfo.profile'] }));
 
 router.get('/login-promo/auth/google/callback', passport.authenticate('google', {
     successRedirect: '/login-promo/profile',
