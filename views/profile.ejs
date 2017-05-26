@@ -31,6 +31,7 @@
                 <strong>token</strong>: <%= user.accessToken %><br>
                 <strong>username</strong>: <%= user.twitter.username %><br>
                 <strong>displayName</strong>: <%= user.twitter.displayName %>
+                <strong>email</strong>: <%= user.twitter.emails[0].value %><br>
             <% } %>
 
             <% if (typeof user.google != 'undefined') { %>
