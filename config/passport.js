@@ -119,7 +119,6 @@ module.exports = function(passport) {
             //         }
             //     });
             // });
-            console.log("profile: " + JSON.stringify(profile));
             var retorno = {};
             retorno.twitter = profile;
             retorno.accessToken = token;
