@@ -96,7 +96,6 @@ module.exports = function(passport) {
             consumerKey: configAuth.twitterAuth.consumerKey,
             consumerSecret: configAuth.twitterAuth.consumerSecret,
             callbackURL: configAuth.twitterAuth.callbackURL,
-            passReqToCallback: true,
             includeEmail: true
         },
         function(token, tokenSecret, profile, done) {
