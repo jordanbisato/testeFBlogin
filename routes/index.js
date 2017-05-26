@@ -15,7 +15,7 @@ router.get('/login-promo/signup', function(req, res) {
 });
 
 router.get('/login-promo/profile', isLoggedIn, function(req, res) {
-    console.log("user: " + JSON.parse(req.user));
+    console.log("user: " + req.user);
     res.render('profile.ejs', { user: req.user });
 });
 
