@@ -24,17 +24,17 @@ router.get('/login-promo/logout', function(req, res) {
     res.redirect('/login-promo');
 });
 
-router.post('/login-promo/signup', passport.authenticate('local-signup', {
-    successRedirect: '/profile',
-    failureRedirect: '/signup',
-    failureFlash: true,
-}));
-
-router.post('/login-promo/login', passport.authenticate('local-login', {
-    successRedirect: '/profile',
-    failureRedirect: '/login',
-    failureFlash: true,
-}));
+// router.post('/login-promo/signup', passport.authenticate('local-signup', {
+//     successRedirect: '/profile',
+//     failureRedirect: '/signup',
+//     failureFlash: true,
+// }));
+//
+// router.post('/login-promo/login', passport.authenticate('local-login', {
+//     successRedirect: '/profile',
+//     failureRedirect: '/login',
+//     failureFlash: true,
+// }));
 
 // Facebook routes
 router.get('/login-promo/auth/facebook', passport.authenticate('facebook', {scope:'email, public_profile, publish_actions, user_posts'}));
